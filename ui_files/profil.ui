@@ -50,27 +50,6 @@ min-width:10px;
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="how_much_money">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>30</y>
-     <width>121</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color:#21421e;</string>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; font-style:italic;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="deposit">
    <property name="geometry">
     <rect>
@@ -140,7 +119,7 @@ min-width:10px;
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:#497e76;
+    <string notr="true">background-color:red;
 color:#21421e;
 border-stule:outset;
 border-width:2px;
@@ -168,7 +147,7 @@ min-width:10px;
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:#497e76;
+    <string notr="true">background-color:red;
 color:#21421e;
 border-stule:outset;
 border-width:2px;
@@ -736,7 +715,6 @@ min-width:10px;
   </widget>
   <zorder>label_27</zorder>
   <zorder>label</zorder>
-  <zorder>how_much_money</zorder>
   <zorder>deposit</zorder>
   <zorder>bringout</zorder>
   <zorder>translate</zorder>

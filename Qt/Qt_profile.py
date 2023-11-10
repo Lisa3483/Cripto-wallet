@@ -12,6 +12,7 @@ class Profile(QMainWindow):
         self.db = CryptoWalletDatabase("BD\\DataBase")
         self.setWindowTitle('Профиль пользователя')
         self.id = id
+        self.other = other
         self.db.connect()
         self.Money_set()
         self.Ui_comp()
@@ -25,11 +26,13 @@ class Profile(QMainWindow):
         self.EUR_count.setText(str(result[2]))
         self.BTC_count.setText(str(result[4]))
         self.ETH_count.setText(str(result[5]))
-        self.goout.clicked.connect(self.close_prof)
 
     def Ui_comp(self):
         self.deposit.clicked.connect(self.deposit_btn)
         self.update.clicked.connect(self.update_btn)
+        self.goout.clicked.connect(self.close_prof)
+        self.bringout.clicked.connect(self.bringout_btn)
+
         btc = QPixmap('image\\btc.png')
         self.Btcpix.setPixmap(btc)
         rub = QPixmap('image\\rub.png')
@@ -38,10 +41,10 @@ class Profile(QMainWindow):
         self.Usdtpix.setPixmap(dol)
 
     def deposit_btn(self):
-        print(1)
-        result = list(self.db.all_maney(self.id)[0])[1]
+        self.other.start_deposit(self.id)
 
-        self.db.deposit_rub(self.id, 100 + float(result))
+    def bringout_btn(self):
+        self.other.start_bringout(self.id)
 
     def update_btn(self):
         self.Money_set()
@@ -52,21 +55,31 @@ class Profile(QMainWindow):
 
     def get_curs(self):
 
-        exchange_rates = self.get_exchange_rates()
-        print("API Response:", exchange_rates)
-        if exchange_rates:
-            rub_to_usd = exchange_rates.get("rub", {}).get("usd", "N/A")
+        rub_url = "https://www.cbr-xml-daily.ru/daily_json.js"
+        rub_response = requests.get(rub_url)
+        rub_data = rub_response.json()
+        rub_rate = rub_data["Valute"]["USD"]["Value"]
 
-            eur_to_usd = exchange_rates.get("eur", {}).get("usd", "N/A")
-            bitcoin_to_usd = exchange_rates.get("bitcoin", {}).get("usd", "N/A")
-            ethereum_to_usd = exchange_rates.get("ethereum", {}).get("usd", "N/A")
-            self.label_6.setText(str(rub_to_usd))
-            self.label_9.setText(str(1.0))
-            self.label_14.setText(str(eur_to_usd))
-            self.label_19.setText(str(bitcoin_to_usd))
-            self.label_24.setText(str(ethereum_to_usd))
-        else:
-            print("Не удалось получить данные о курсах.")
+        eur_url = "https://open.er-api.com/v6/latest/EUR"
+        eur_response = requests.get(eur_url)
+        eur_data = eur_response.json()
+        eur_rate = eur_data["rates"]["USD"]
+
+        self.label_6.setText(str(rub_rate))
+        self.label_14.setText(str(eur_rate))
+        crypto_url = "https://api.coingecko.com/api/v3/simple/price"
+        params = {
+            "ids": "bitcoin,ethereum",
+            "vs_currencies": "usd"
+        }
+        crypto_response = requests.get(crypto_url, params=params)
+        crypto_data = crypto_response.json()
+        bitcoin_rate = crypto_data["bitcoin"]["usd"]
+        ethereum_rate = crypto_data["ethereum"]["usd"]
+
+        self.label_19.setText(str(bitcoin_rate))
+        self.label_24.setText(str(ethereum_rate))
+        self.label_9.setText(str(1.0))
 
     def get_exchange_rates(self):
         url = "https://api.coingecko.com/api/v3/simple/price"
@@ -82,6 +95,8 @@ class Profile(QMainWindow):
             return data
         else:
             return None
+
+
 
 
 def start_profile():

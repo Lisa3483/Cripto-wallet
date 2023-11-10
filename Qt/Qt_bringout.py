@@ -1,32 +1,29 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QPushButton
-
 from BD.DataBase import CryptoWalletDatabase
 
 
-class Deposit(QMainWindow):
+class Bringout(QMainWindow):
     def __init__(self, id):
         super().__init__()
-        uic.loadUi('ui_files\\deposit_q.ui', self)
+        uic.loadUi('ui_files\\bringout_q.ui', self)
         self.id = id
         self.db = CryptoWalletDatabase("BD\\DataBase")
-        self.setWindowTitle('Пополнение')
+        self.setWindowTitle('Вывод средств')
         self.db.connect()
         self.Ui_comp()
-        self.index = None
-        self.waluta = None
 
     def Ui_comp(self):
-        self.dtposit_btn.clicked.connect(self.deposit_m)
-        self.comboBox_deposit.activated.connect(self.activated)
-        self.comboBox_deposit.currentTextChanged.connect(self.text_changed)
-        self.comboBox_deposit.currentIndexChanged.connect(self.index_changed)
-        self.No_deposit_btn.clicked.connect(self.close_entr)
+        self.bringout_btn.clicked.connect(self.brigout_m)
+        self.comboBox_bringout.activated.connect(self.activated)
+        self.comboBox_bringout.currentTextChanged.connect(self.text_changed)
+        self.comboBox_bringout.currentIndexChanged.connect(self.index_changed)
+        self.No_bringout_btn.clicked.connect(self.close_entr)
 
-    def deposit_m(self):
+    def brigout_m(self):
         result = list(self.db.all_maney(self.id)[0])[self.index]
 
-        self.db.deposit_money(self.id, self.waluta, float(self.lineEdit_deposit.text()) + float(result))
+        self.db.deposit_money(self.id, self.waluta,   float(result) - float(self.lineEdit_bringout.text()))
 
     def close_entr(self):
         self.close()

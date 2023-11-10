@@ -28,9 +28,9 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>0</x>
      <y>0</y>
-     <width>171</width>
+     <width>131</width>
      <height>31</height>
     </rect>
    </property>
@@ -38,13 +38,13 @@
     <string notr="true">color:#21421e;</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic;&quot;&gt;Какую валюту конвертировать?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; font-style:italic;&quot;&gt;Какую валюту конвертировать?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QComboBox" name="comboBox_convert">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>10</x>
      <y>30</y>
      <width>91</width>
      <height>20</height>
@@ -83,7 +83,7 @@ color:#21421e;</string>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>70</x>
      <y>50</y>
      <width>181</width>
      <height>31</height>
@@ -93,13 +93,13 @@ color:#21421e;</string>
     <string notr="true">color:#21421e;</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic;&quot;&gt;На какую сумму конвертировать?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; font-style:italic;&quot;&gt;На какую сумму конвертировать?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_convert">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>30</x>
      <y>80</y>
      <width>91</width>
      <height>20</height>
@@ -185,29 +185,72 @@ min-width:10px;
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="back">
+  <widget class="QComboBox" name="comboBox_convert_2">
    <property name="geometry">
     <rect>
-     <x>-10</x>
-     <y>-10</y>
-     <width>41</width>
+     <x>150</x>
+     <y>30</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+color:#21421e;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>RUB</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>USDT</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>EUR</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>BTC</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>ETH</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>0</y>
+     <width>131</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:#497e76;
-color:#21421e;
-border-stule:outset;
-border-width:2px;
-border-radius:10px;
-border-color:white;
-font:bold 9px;
-padding:10px;
-min-width:10px;
-</string>
+    <string notr="true">color:#21421e;</string>
    </property>
    <property name="text">
-    <string>&lt;-</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; font-style:italic;&quot;&gt;В какую валюту конвертировать?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>80</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>п</string>
    </property>
   </widget>
   <zorder>label_2</zorder>
@@ -217,7 +260,9 @@ min-width:10px;
   <zorder>lineEdit_convert</zorder>
   <zorder>convert_btn</zorder>
   <zorder>No_convert_btn</zorder>
-  <zorder>back</zorder>
+  <zorder>comboBox_convert_2</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_5</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -5,7 +5,8 @@ from PyQt5.QtGui import QPixmap
 from Qt.Qt_profile import Profile
 from Qt.Qt_entrance import Entrance
 from Qt.Qt_regestratione import Regestration
-from Qt.Qt_deposit_money import Deposit_money
+from Qt.Qt_deposit_money import Deposit
+from  Qt.Qt_bringout import Bringout
 
 widget_wallet = None
 
@@ -17,6 +18,7 @@ class Widget_wallet(QMainWindow):
         self.UiComponents()
         print("Запуск")
         self.setWindowTitle('Крипто кошелёк (Лиза Ш.)')
+        self.setFixedSize(self.width(), self.height())
 
     def UiComponents(self):
         self.regestratione.clicked.connect(self.reg)
@@ -39,8 +41,12 @@ class Widget_wallet(QMainWindow):
         self.w2 = Profile(id, self)
         self.w2.show()
 
-    def start_deposit_money(self, id):
-        self.money = Deposit_money(id)
+    def start_deposit(self, id):
+        self.money = Deposit(id)
+        self.money.show()
+
+    def start_bringout(self, id):
+        self.money = Bringout(id)
         self.money.show()
 
 

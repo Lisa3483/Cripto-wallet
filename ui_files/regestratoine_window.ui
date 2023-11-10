@@ -90,7 +90,7 @@ color:#21421e;
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:#497e76;
+    <string notr="true">background-color:red;
 color:#21421e;
 border-stule:outset;
 border-width:2px;

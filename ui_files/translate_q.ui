@@ -103,7 +103,7 @@ min-width:10px;
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>20</x>
      <y>0</y>
      <width>171</width>
      <height>31</height>
@@ -119,7 +119,7 @@ min-width:10px;
   <widget class="QLineEdit" name="lineEdit_translate">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>20</x>
      <y>30</y>
      <width>91</width>
      <height>20</height>
@@ -129,7 +129,7 @@ min-width:10px;
   <widget class="QLineEdit" name="lineEdit_translate_2">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>20</x>
      <y>80</y>
      <width>91</width>
      <height>20</height>
@@ -152,30 +152,73 @@ min-width:10px;
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic;&quot;&gt;Сколько перевести ?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="back">
+  <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>-10</x>
+     <x>130</x>
+     <y>80</y>
+     <width>161</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>п</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
      <y>-10</y>
-     <width>41</width>
-     <height>31</height>
+     <width>91</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:#497e76;
-color:#21421e;
-border-stule:outset;
-border-width:2px;
-border-radius:10px;
-border-color:white;
-font:bold 9px;
-padding:10px;
-min-width:10px;
-</string>
+    <string notr="true">color:#21421e;</string>
    </property>
    <property name="text">
-    <string>&lt;-</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; font-style:italic;&quot;&gt;В какой валюте?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_translate">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>30</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+color:#21421e;</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>RUB</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>USDT</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>EUR</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>BTC</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>ETH</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

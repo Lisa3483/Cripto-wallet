@@ -55,7 +55,7 @@ min-width:10px;
     <rect>
      <x>20</x>
      <y>110</y>
-     <width>91</width>
+     <width>81</width>
      <height>31</height>
     </rect>
    </property>
@@ -115,12 +115,17 @@ color:#21421e;</string>
    </property>
    <item>
     <property name="text">
+     <string/>
+    </property>
+   </item>
+   <item>
+    <property name="text">
      <string>RUB</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>USDT</string>
+     <string>USD</string>
     </property>
    </item>
    <item>
@@ -174,7 +179,7 @@ color:#21421e;</string>
   <widget class="QLineEdit" name="lineEdit_bringout">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>30</x>
      <y>80</y>
      <width>91</width>
      <height>20</height>
@@ -185,29 +190,17 @@ color:#21421e;</string>
 color:#21421e;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="back_2">
+  <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>-10</x>
-     <y>-10</y>
-     <width>41</width>
-     <height>31</height>
+     <x>130</x>
+     <y>80</y>
+     <width>101</width>
+     <height>20</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:#497e76;
-color:#21421e;
-border-stule:outset;
-border-width:2px;
-border-radius:10px;
-border-color:white;
-font:bold 9px;
-padding:10px;
-min-width:10px;
-</string>
-   </property>
    <property name="text">
-    <string>&lt;-</string>
+    <string>п</string>
    </property>
   </widget>
  </widget>

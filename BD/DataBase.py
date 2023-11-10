@@ -101,6 +101,6 @@ class CryptoWalletDatabase:
         print(result)
         return result
 
-    def deposit_rub(self, id, count):
-        query = "UPDATE wallets SET RUB=? WHERE users_id = ?"
+    def deposit_money(self, id, wal, count):
+        query = f"UPDATE wallets SET {wal}=? WHERE users_id = ?"
         self.execute_query(query, (count, id))
