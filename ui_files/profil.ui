@@ -247,7 +247,7 @@ min-width:10px;
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>210</y>
+     <y>160</y>
      <width>61</width>
      <height>61</height>
     </rect>
@@ -263,7 +263,7 @@ min-width:10px;
    <property name="geometry">
     <rect>
      <x>130</x>
-     <y>230</y>
+     <y>180</y>
      <width>51</width>
      <height>31</height>
     </rect>
@@ -276,7 +276,7 @@ min-width:10px;
    <property name="geometry">
     <rect>
      <x>200</x>
-     <y>230</y>
+     <y>180</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -289,7 +289,7 @@ min-width:10px;
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>230</y>
+     <y>180</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -302,7 +302,7 @@ min-width:10px;
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>230</y>
+     <y>180</y>
      <width>81</width>
      <height>31</height>
     </rect>
@@ -315,7 +315,7 @@ min-width:10px;
    <property name="geometry">
     <rect>
      <x>430</x>
-     <y>230</y>
+     <y>180</y>
      <width>271</width>
      <height>31</height>
     </rect>
@@ -478,7 +478,7 @@ min-width:10px;
     <rect>
      <x>260</x>
      <y>350</y>
-     <width>61</width>
+     <width>51</width>
      <height>22</height>
     </rect>
    </property>
@@ -533,7 +533,7 @@ min-width:10px;
     <rect>
      <x>260</x>
      <y>410</y>
-     <width>71</width>
+     <width>61</width>
      <height>22</height>
     </rect>
    </property>
@@ -648,23 +648,10 @@ min-width:10px;
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;$&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>320</x>
-     <y>230</y>
-     <width>31</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;$&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>330</x>
      <y>290</y>
      <width>31</width>
      <height>21</height>
@@ -677,7 +664,7 @@ min-width:10px;
   <widget class="QLabel" name="label_16">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>330</x>
      <y>350</y>
      <width>31</width>
      <height>21</height>
@@ -690,7 +677,7 @@ min-width:10px;
   <widget class="QLabel" name="label_21">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>330</x>
      <y>410</y>
      <width>31</width>
      <height>21</height>
@@ -703,7 +690,7 @@ min-width:10px;
   <widget class="QLabel" name="label_26">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>330</x>
      <y>470</y>
      <width>31</width>
      <height>21</height>
@@ -751,7 +738,6 @@ min-width:10px;
   <zorder>label_25</zorder>
   <zorder>ETH_count</zorder>
   <zorder>label_24</zorder>
-  <zorder>label_5</zorder>
   <zorder>label_11</zorder>
   <zorder>label_16</zorder>
   <zorder>label_21</zorder>
