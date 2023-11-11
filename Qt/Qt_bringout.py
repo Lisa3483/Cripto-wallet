@@ -1,5 +1,5 @@
 from PyQt5 import uic
-from PyQt5.QtWidgets import QMainWindow, QPushButton
+from PyQt5.QtWidgets import QMainWindow
 from BD.DataBase import CryptoWalletDatabase
 
 
@@ -14,16 +14,20 @@ class Bringout(QMainWindow):
         self.Ui_comp()
 
     def Ui_comp(self):
+        self.back.clicked.connect(self.close_entr)
         self.bringout_btn.clicked.connect(self.brigout_m)
         self.comboBox_bringout.activated.connect(self.activated)
         self.comboBox_bringout.currentTextChanged.connect(self.text_changed)
         self.comboBox_bringout.currentIndexChanged.connect(self.index_changed)
         self.No_bringout_btn.clicked.connect(self.close_entr)
 
+    def close_entr(self):
+        self.close()
+
     def brigout_m(self):
         result = list(self.db.all_maney(self.id)[0])[self.index]
 
-        self.db.deposit_money(self.id, self.waluta,   float(result) - float(self.lineEdit_bringout.text()))
+        self.db.deposit_money(self.id, self.waluta, float(result) - float(self.lineEdit_bringout.text()))
 
     def close_entr(self):
         self.close()

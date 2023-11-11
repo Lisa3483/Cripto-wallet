@@ -1,7 +1,7 @@
 from BD.DataBase import CryptoWalletDatabase
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton
-from PyQt5.QtGui import QPixmap
+from generate_code import SATGenerator
 import requests
 
 
@@ -32,13 +32,17 @@ class Profile(QMainWindow):
         self.update.clicked.connect(self.update_btn)
         self.goout.clicked.connect(self.close_prof)
         self.bringout.clicked.connect(self.bringout_btn)
+        self.translate.clicked.connect(self.translate_btn)
 
-        btc = QPixmap('image\\btc.png')
+    def translate_btn(self):
+        generator = SATGenerator().generate("код_доступа.txt")
+
+        '''btc = QPixmap('image\\btc.png')
         self.Btcpix.setPixmap(btc)
         rub = QPixmap('image\\rub.png')
         self.Rubpix.setPixmap(rub)
         dol = QPixmap('image\\dol.png')
-        self.Usdtpix.setPixmap(dol)
+        self.Usdtpix.setPixmap(dol)'''
 
     def deposit_btn(self):
         self.other.start_deposit(self.id)
@@ -95,10 +99,3 @@ class Profile(QMainWindow):
             return data
         else:
             return None
-
-
-
-
-def start_profile():
-    prof = Profile()
-    prof.show()

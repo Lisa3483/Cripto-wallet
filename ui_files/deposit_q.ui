@@ -31,8 +31,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>40</y>
+     <x>50</x>
+     <y>30</y>
      <width>371</width>
      <height>31</height>
     </rect>
@@ -96,8 +96,8 @@ color:#21421e;</string>
     <rect>
      <x>-10</x>
      <y>-30</y>
-     <width>431</width>
-     <height>281</height>
+     <width>441</width>
+     <height>331</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -155,6 +155,9 @@ color:#21421e;</string>
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color:#497e76;
 color:#21421e;
@@ -180,6 +183,9 @@ min-width:10px;
      <height>41</height>
     </rect>
    </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color:#497e76;
 color:#21421e;
@@ -196,6 +202,34 @@ min-width:10px;
     <string>Не пополнять</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="back">
+   <property name="geometry">
+    <rect>
+     <x>-20</x>
+     <y>-10</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:#497e76;
+color:#21421e;
+border-stule:outset;
+border-width:2px;
+border-radius:10px;
+border-color:white;
+font:bold 14px;
+padding:10px;
+min-width:10px;
+</string>
+   </property>
+   <property name="text">
+    <string>&lt;-</string>
+   </property>
+  </widget>
   <zorder>label_2</zorder>
   <zorder>label</zorder>
   <zorder>comboBox_deposit</zorder>
@@ -203,6 +237,7 @@ min-width:10px;
   <zorder>lineEdit_deposit</zorder>
   <zorder>dtposit_btn</zorder>
   <zorder>No_deposit_btn</zorder>
+  <zorder>back</zorder>
  </widget>
  <resources/>
  <connections/>

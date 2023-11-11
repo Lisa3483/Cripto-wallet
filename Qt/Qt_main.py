@@ -6,7 +6,7 @@ from Qt.Qt_profile import Profile
 from Qt.Qt_entrance import Entrance
 from Qt.Qt_regestratione import Regestration
 from Qt.Qt_deposit_money import Deposit
-from  Qt.Qt_bringout import Bringout
+from Qt.Qt_bringout import Bringout
 
 widget_wallet = None
 

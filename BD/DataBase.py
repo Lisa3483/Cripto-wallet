@@ -27,7 +27,7 @@ class CryptoWalletDatabase:
         query = f"SELECT {', '.join(columns)} FROM Users WHERE user_id = ?"
         return self.execute_query(query, (user_id,))
 
-    def create_table(self, table_name, columns):
+    '''def create_table(self, table_name, columns):
         columns_str = ', '.join(columns)
         create_table_query = f"CREATE TABLE IF NOT EXISTS {table_name} ({columns_str})"
         self.execute_query(create_table_query)
@@ -35,30 +35,33 @@ class CryptoWalletDatabase:
         username, password, email, wallet_id = user_data
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
         insert_query = "INSERT INTO Users (username, password, email, wallet_id) VALUES (?, ?, ?, ?)"
-        self.execute_query(insert_query, (username, hashed_password, email, wallet_id))
+        # self.execute_query(insert_query, (username, hashed_password, email, wallet_id))'''
 
     def insert_user_data(self, user_data):
         user_name, users_email, user_pasword, name, surname, middle_name = user_data
         user_pasword = bcrypt.hashpw(user_pasword.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-        insert_query = "INSERT INTO users (user_name, users_email, user_pasword, name, surname, middle_name) VALUES (?, ?, ?, ?,?,?)"
+        insert_query = "INSERT INTO users (user_name, users_email, " \
+                       "user_pasword, name, surname, middle_name) VALUES (?, ?, ?, ?,?,?)"
         self.execute_query(insert_query, (user_name, users_email, user_pasword, name, surname, middle_name))
         self.create_wallet([0, 0, 0, 0, 0])
 
-    def get_wallet_data(self, user_id, wallet_id):
+    '''def get_wallet_data(self, user_id, wallet_id):
         query = "SELECT wallet_name, balance, currency FROM Wallets WHERE user_id = ? AND wallet_id = ?"
-        return self.execute_query(query, (user_id, wallet_id))
+        return self.execute_query(query, (user_id, wallet_id))'''
 
     def create_wallet(self, wallet_data):
         insert_query = "INSERT INTO Wallets (RUB, EUR, USD, BTC,ETH) VALUES (?, ?, ?, ?, ?)"
         self.execute_query(insert_query, wallet_data)
 
-    def get_transactions(self, wallet_id):
-        query = "SELECT transaction_id, transaction_type, amount, timestamp, description FROM Transactions WHERE wallet_id = ?"
-        return self.execute_query(query, (wallet_id,))
+    '''def get_transactions(self, wallet_id):
+        query = "SELECT transaction_id, transaction_type, amount, timestamp, " \
+                "description FROM Transactions WHERE wallet_id = ?"
+        return self.execute_query(query, (wallet_id,))'''
 
-    def add_transaction(self, transaction_data):
-        insert_query = "INSERT INTO Transactions (wallet_id, transaction_type, amount, timestamp, description) VALUES (?, ?, ?, ?, ?)"
-        self.execute_query(insert_query, transaction_data)
+    '''def add_transaction(self, transaction_data):
+        insert_query = "INSERT INTO Transactions (wallet_id, transaction_type, amount, " \
+                       "timestamp, description) VALUES (?, ?, ?, ?, ?)"
+        self.execute_query(insert_query, transaction_data)'''
 
     def check_user_exists(self, user_name, users_email):
         query = "SELECT users_id FROM users WHERE user_name = ? OR users_email = ?"
@@ -89,11 +92,11 @@ class CryptoWalletDatabase:
             print(f"Ошибка при выполнении запроса: {e}.")
             return None
 
-    def check_nick(self, user_name):
+    '''def check_nick(self, user_name):
         query = "SELECT users_id FROM users WHERE user_name = ?"
         result = self.execute_query(query, (user_name,))
         print(result)
-        return bool(result)
+        return bool(result)'''
 
     def all_maney(self, id):
         query = "SELECT * FROM wallets WHERE users_id = ?"

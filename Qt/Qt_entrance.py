@@ -13,7 +13,7 @@ class Entrance(QMainWindow):
         self.entrance.clicked.connect(self.entrance_btn)
         self.back.clicked.connect(self.close_entr)
         self.other = other
-        self.show()
+        # self.show()
 
     def close_entr(self):
         self.close()
@@ -25,8 +25,3 @@ class Entrance(QMainWindow):
             self.other.start_profile(id)
         else:
             print("Неверный логин или пароль")
-
-
-def start_entr():
-    entr = Entrance()
-    entr.show()

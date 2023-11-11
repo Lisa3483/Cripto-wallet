@@ -18,7 +18,7 @@ class Regestration(QMainWindow):
         self.db.connect()
         self.other = other
         self.Ui_comp()
-        self.show()
+        # self.show()
 
     def Ui_comp(self):
         self.back.clicked.connect(self.close_entr)
